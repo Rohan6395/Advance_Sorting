@@ -1,0 +1,1 @@
+I am going to deploy this application into Kubernetes cluster using Jenkins pipeline
