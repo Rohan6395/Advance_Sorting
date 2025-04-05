@@ -1,1 +1,1 @@
-I am going to deploy this application into Kubernetes cluster using Jenkins pipeline
+I have deploy this application into Kubernetes cluster using Argo CD
