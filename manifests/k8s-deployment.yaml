@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: merge-sort-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: merge-sort
+  template:
+    metadata:
+      labels:
+        app: merge-sort
+    spec:
+      containers:
+        - name: merge-sort-container
+          image: merge-sort-visualizer:latest
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: merge-sort-service
+spec:
+  selector:
+    app: merge-sort
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
